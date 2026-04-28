@@ -1,0 +1,44 @@
+<h3>INLINE-BLOCK BASELINE ALIGNMENT</h3>
+<p>Mixing <code>display: inline-block</code> elements of different heights causes unexpected vertical misalignment.</p>
+
+<h4>With inline-block (items align to text baseline):</h4>
+<div class="row bad">
+    <div class="item short">short</div>
+    <div class="item tall">tall<br>item<br>here</div>
+    <div class="item short">short</div>
+</div>
+
+<h4>With flexbox (items align predictably):</h4>
+<div class="row good">
+    <div class="item short">short</div>
+    <div class="item tall">tall<br>item<br>here</div>
+    <div class="item short">short</div>
+</div>
+
+<style>
+    body { font-family: sans-serif; padding: 20px; }
+    h4 { margin: 16px 0 8px; font-size: 0.9em; }
+
+    .row {
+        border: 5px dashed gray;
+        padding: 10px;
+        margin-bottom: 16px;
+    }
+
+    .item {
+        border: 3px dashed lightgray;
+        padding: 10px 16px;
+    }
+
+    .bad .item {
+        display: inline-block; /**aligns to text baseline — short items drop down**/
+    }
+
+    .good {
+        display: flex; /**all items stretch to the same height by default**/
+        gap: 8px;
+        align-items: flex-start;
+    }
+
+    .good .item { display: block; }
+</style>

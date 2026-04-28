@@ -1,0 +1,33 @@
+<h3>BASIC GRID</h3>
+
+<div data-label-grid-container class="grid-example grid1">
+
+    <div data-label-grid-item>1</div>
+    <div data-label-grid-item>2</div>
+    <div data-label-grid-item>3</div>
+    <div data-label-grid-item>4</div>
+    <div data-label-grid-item>5</div>
+    <div data-label-grid-item>6</div>
+
+</div>
+
+<style>
+    .grid-example {
+        border: 5px dashed gray;
+        padding: 10px;
+        gap: 8px;
+        font-family: sans-serif;
+
+        & > * {
+            border: 3px dashed lightgray;
+            padding: 20px;
+            font-size: 1.4em;
+            text-align: center;
+        }
+    }
+
+    .grid1 {
+        display: grid; /**makes the element a grid**/
+        grid-template-columns: 1fr 1fr 1fr; /**3 equal columns**/
+    }
+</style>

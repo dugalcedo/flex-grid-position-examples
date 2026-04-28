@@ -1,0 +1,68 @@
+<h3>FLEX EXAMPLES</h3>
+
+<div data-label-flexbox class="flex-example example-1">
+
+    <div data-label-flex-item>
+        <img src="../icons/dog1.svg" alt="dog icon">
+        <p>dog icon</p>
+    </div>
+    
+    <img data-label-flex-item src="../icons/cogwheel1.svg" alt="cogwheel icon">
+    
+    <div data-label-flex-item>
+        <img src="../icons/car1.svg" alt="car icon">
+        <span>car icon</span>
+    </div>
+
+    <img data-label-flex-item src="../icons/partypopper1.svg" alt="party popper icon">
+
+</div>
+
+<style>
+    .flex-example {
+        border: 5px dashed gray;
+
+        & img {
+            width: 50px;
+        }
+
+        & > * {
+            border: 3px dashed lightgray;
+        }
+    }
+
+    .example-1 {
+        display: flex; /**makes the element a flexbox**/
+        justify-content: center; /**centers the items horizontally**/
+
+    }
+</style>
+
+<h3>WITH GAP and ALIGN-ITEMS</h3>
+
+<div data-label-flexbox class="flex-example example-2">
+
+    <div data-label-flex-item>
+        <img src="../icons/dog1.svg" alt="dog icon">
+        <p>dog icon</p>
+    </div>
+    
+    <img data-label-flex-item src="../icons/cogwheel1.svg" alt="cogwheel icon">
+    
+    <div data-label-flex-item>
+        <img src="../icons/car1.svg" alt="car icon">
+        <span>car icon</span>
+    </div>
+
+    <img data-label-flex-item src="../icons/partypopper1.svg" alt="party popper icon">
+
+</div>
+
+<style>
+    .example-2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 25px; /**Puts space between each flex item**/
+    }
+</style>

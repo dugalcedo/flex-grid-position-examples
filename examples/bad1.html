@@ -1,0 +1,49 @@
+<h3>FLOAT COLLAPSE</h3>
+<p>When all children float, the parent collapses to zero height — the border disappears.</p>
+
+<h4>The problem:</h4>
+<div class="container">
+    <div class="col">one</div>
+    <div class="col">two</div>
+    <div class="col">three</div>
+</div>
+<p class="after">I'm the next element — I'm overlapping the floats!</p>
+
+<h4 style="margin-top: 140px">The fix: use flexbox instead.</h4>
+<div class="container fixed">
+    <div class="col">one</div>
+    <div class="col">two</div>
+    <div class="col">three</div>
+</div>
+
+<style>
+    body { font-family: sans-serif; padding: 20px; }
+    p, h4 { margin-bottom: 12px; }
+    h4 { margin-top: 16px; }
+
+    .container {
+        border: 5px dashed red;
+        /**parent has no height — floated children are removed from flow**/
+    }
+
+    .col {
+        float: left; /**each child is removed from the normal flow**/
+        width: 33%;
+        padding: 20px;
+        text-align: center;
+        border: 3px dashed lightgray;
+        box-sizing: border-box;
+    }
+
+    .after {
+        background: salmon;
+        padding: 8px;
+    }
+
+    .fixed {
+        border-color: green;
+        display: flex; /**flex children stay in flow — no collapse**/
+    }
+
+    .fixed .col { float: none; }
+</style>

@@ -1,0 +1,49 @@
+<h3>SPACE BETWEEN (NAVBAR)</h3>
+
+<div data-label-flexbox class="flex-example example-6">
+
+    <div data-label-flex-item class="logo">MyApp</div>
+
+    <div data-label-flex-item class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+
+</div>
+
+<style>
+    .flex-example {
+        border: 5px dashed gray;
+
+        & > * {
+            border: 3px dashed lightgray;
+        }
+    }
+
+    .example-6 {
+        display: flex;
+        justify-content: space-between; /**pushes items to opposite ends**/
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .logo {
+        font-size: 1.3em;
+        font-weight: bold;
+        font-family: sans-serif;
+        padding: 4px 8px;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 20px;
+        padding: 4px 8px;
+
+        & a {
+            text-decoration: none;
+            color: inherit;
+            font-family: sans-serif;
+        }
+    }
+</style>

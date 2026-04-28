@@ -1,0 +1,52 @@
+<h3>FLOAT-BASED LAYOUT</h3>
+<p>Floats were never designed for layout — they require hacks and break easily.</p>
+
+<div class="layout">
+    <div class="sidebar">sidebar</div>
+    <div class="main">main content</div>
+</div>
+
+<p class="after">I'm the next element — also needs clearing!</p>
+
+<div class="layout-good">
+    <div class="sidebar">sidebar</div>
+    <div class="main">main content — use grid instead!</div>
+</div>
+
+<style>
+    body { font-family: sans-serif; padding: 20px; }
+    p { margin: 12px 0; }
+
+    .layout {
+        border: 5px dashed red;
+        overflow: hidden; /**hack to prevent collapse — but clips content**/
+    }
+
+    .sidebar {
+        float: left; /**floats as a layout hack**/
+        width: 160px;
+        padding: 20px;
+        background: #eee;
+    }
+
+    .main {
+        float: left; /**everything must float, creating fragile layouts**/
+        width: calc(100% - 160px); /**manual calculation needed**/
+        padding: 20px;
+    }
+
+    .after {
+        background: salmon;
+        padding: 8px;
+        clear: both; /**forgot this? floats bleed into next content**/
+    }
+
+    .layout-good {
+        border: 5px dashed green;
+        display: grid; /**clean, no hacks needed**/
+        grid-template-columns: 160px 1fr;
+    }
+
+    .layout-good .sidebar { float: none; }
+    .layout-good .main { float: none; width: auto; padding: 20px; }
+</style>

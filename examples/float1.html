@@ -1,0 +1,28 @@
+<h3>FLOAT: LEFT</h3>
+<p>The image floats left and text wraps around it.</p>
+
+<div class="article">
+
+    <img data-label-floated src="../icons/dog1.svg" alt="dog icon" class="float-left">
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+
+</div>
+
+<style>
+    body { font-family: sans-serif; padding: 20px; }
+    p { margin-bottom: 16px; }
+
+    .article {
+        border: 5px dashed gray;
+        padding: 16px;
+    }
+
+    .float-left {
+        float: left; /**removes element from flow, text wraps around it**/
+        width: 80px;
+        margin: 0 16px 8px 0;
+    }
+</style>

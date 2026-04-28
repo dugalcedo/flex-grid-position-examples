@@ -1,0 +1,28 @@
+<h3>MIXED COLUMN SIZES</h3>
+
+<div data-label-grid-container class="grid-example grid2">
+
+    <div data-label-grid-item>sidebar</div>
+    <div data-label-grid-item>main</div>
+
+</div>
+
+<style>
+    .grid-example {
+        border: 5px dashed gray;
+        padding: 10px;
+        gap: 8px;
+        font-family: sans-serif;
+
+        & > * {
+            border: 3px dashed lightgray;
+            padding: 20px;
+            text-align: center;
+        }
+    }
+
+    .grid2 {
+        display: grid;
+        grid-template-columns: 200px 1fr; /**fixed sidebar, flexible main**/
+    }
+</style>

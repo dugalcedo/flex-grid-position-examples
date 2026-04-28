@@ -1,0 +1,35 @@
+<h3>FLEX GROW</h3>
+
+<div data-label-flexbox class="flex-example example-5">
+
+    <div data-label-flex-item class="sidebar">sidebar</div>
+    <div data-label-flex-item class="main">main content</div>
+    <div data-label-flex-item class="sidebar">sidebar</div>
+
+</div>
+
+<style>
+    .flex-example {
+        border: 5px dashed gray;
+
+        & > * {
+            border: 3px dashed lightgray;
+            padding: 10px;
+            font-family: sans-serif;
+        }
+    }
+
+    .example-5 {
+        display: flex;
+        gap: 8px;
+        padding: 8px;
+    }
+
+    .sidebar {
+        width: 80px; /**fixed width — won't grow**/
+    }
+
+    .main {
+        flex-grow: 1; /**stretches to fill all remaining space**/
+    }
+</style>

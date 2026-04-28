@@ -1,0 +1,42 @@
+<h3>FLEX DIRECTION: COLUMN</h3>
+
+<div data-label-flexbox class="flex-example example-3">
+
+    <div data-label-flex-item>
+        <img src="../icons/dog1.svg" alt="dog icon">
+        <p>dog</p>
+    </div>
+
+    <div data-label-flex-item>
+        <img src="../icons/car1.svg" alt="car icon">
+        <p>car</p>
+    </div>
+
+    <div data-label-flex-item>
+        <img src="../icons/cogwheel1.svg" alt="cogwheel icon">
+        <p>cogwheel</p>
+    </div>
+
+</div>
+
+<style>
+    .flex-example {
+        border: 5px dashed gray;
+
+        & img {
+            width: 50px;
+        }
+
+        & > * {
+            border: 3px dashed lightgray;
+        }
+    }
+
+    .example-3 {
+        display: flex;
+        flex-direction: column; /**items stack vertically instead of horizontally**/
+        align-items: center; /**now centers on the horizontal axis**/
+        gap: 10px;
+        padding: 10px;
+    }
+</style>

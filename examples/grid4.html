@@ -1,0 +1,35 @@
+<h3>ROW SPANNING</h3>
+
+<div data-label-grid-container class="grid-example grid4">
+
+    <div data-label-grid-item class="tall">tall</div>
+    <div data-label-grid-item>B</div>
+    <div data-label-grid-item>C</div>
+    <div data-label-grid-item>D</div>
+    <div data-label-grid-item>E</div>
+
+</div>
+
+<style>
+    .grid-example {
+        border: 5px dashed gray;
+        padding: 10px;
+        gap: 8px;
+        font-family: sans-serif;
+
+        & > * {
+            border: 3px dashed lightgray;
+            padding: 20px;
+            text-align: center;
+        }
+    }
+
+    .grid4 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .tall {
+        grid-row: span 2; /**takes up 2 rows**/
+    }
+</style>

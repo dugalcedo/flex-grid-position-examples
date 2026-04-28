@@ -1,0 +1,55 @@
+.main-nav {
+    display: flex;
+    gap: 4px;
+    padding: 12px 0;
+    margin-bottom: 20px;
+
+    & a {
+        color: #888;
+        text-decoration: none;
+        font-family: sans-serif;
+        font-size: 0.9em;
+        padding: 6px 14px;
+        border-radius: 4px;
+
+        &:hover { color: white; }
+        &.active { color: white; background: #333; }
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: black;
+}
+
+.responsive {
+    width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+
+.example {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 2rem;
+
+    & iframe {
+        width: 100%;
+        min-height: 500px;
+        background-color: white;
+    }
+
+    & pre {
+        background-color: rgb(255, 228, 177);
+        padding: 10px;
+        max-height: 500px;
+        overflow-y: auto;
+    }
+}

@@ -1,0 +1,45 @@
+<h3>WRONG AXIS: justify-content vs align-items</h3>
+<p>In a row flexbox, <code>justify-content</code> is horizontal and <code>align-items</code> is vertical — easy to mix up.</p>
+
+<h4>Wanted vertical centering, used justify-content:</h4>
+<div class="box bad">
+    <div class="item">A</div>
+    <div class="item">B</div>
+    <div class="item">C</div>
+</div>
+
+<h4>Correct: use align-items for vertical centering in a row:</h4>
+<div class="box good">
+    <div class="item">A</div>
+    <div class="item">B</div>
+    <div class="item">C</div>
+</div>
+
+<style>
+    body { font-family: sans-serif; padding: 20px; }
+    h4 { margin: 16px 0 8px; font-size: 0.9em; }
+
+    .box {
+        display: flex;
+        height: 120px;
+        border: 5px dashed gray;
+        margin-bottom: 16px;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .item {
+        border: 3px dashed lightgray;
+        padding: 10px 20px;
+    }
+
+    .bad {
+        justify-content: center; /**centers horizontally — not what was wanted**/
+        /**items are still at the top because align-items defaults to stretch/flex-start**/
+    }
+
+    .good {
+        justify-content: center;
+        align-items: center; /**THIS centers vertically in a row flexbox**/
+    }
+</style>

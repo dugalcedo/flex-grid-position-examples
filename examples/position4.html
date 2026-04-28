@@ -1,0 +1,34 @@
+<h3>POSITION: FIXED</h3>
+<p>Scroll down — the fixed element stays pinned to the viewport.</p>
+
+<div data-label-element class="fixed-banner">I am fixed!</div>
+
+<div class="content">
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Scroll down to see the effect.</p>
+    <p>The fixed banner stays put.</p>
+    <p>It doesn't move with the page.</p>
+    <p>Unlike sticky, it never scrolls.</p>
+    <p>Useful for navbars and tooltips.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+</div>
+
+<style>
+    body { font-family: sans-serif; padding: 20px; }
+
+    .fixed-banner {
+        position: fixed; /**stays in place even when the page scrolls**/
+        bottom: 16px;
+        right: 16px;
+        background: steelblue;
+        color: white;
+        padding: 10px 18px;
+        border-radius: 6px;
+    }
+
+    .content p { margin-bottom: 16px; color: #444; }
+</style>

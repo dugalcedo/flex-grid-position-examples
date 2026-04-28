@@ -1,0 +1,36 @@
+<h3>Z-INDEX</h3>
+<p>Higher z-index = closer to the viewer. All three boxes overlap the same spot.</p>
+
+<div data-label-container class="stack">
+
+    <div data-label-element class="box box-a">A (z: 1)</div>
+    <div data-label-element class="box box-b">B (z: 3)</div>
+    <div data-label-element class="box box-c">C (z: 2)</div>
+
+</div>
+
+<style>
+    body { font-family: sans-serif; padding: 20px; }
+    p { margin-bottom: 20px; font-size: 0.9em; color: #555; }
+
+    .stack {
+        position: relative; /**z-index only works on positioned elements**/
+        height: 160px;
+        border: 5px dashed gray;
+    }
+
+    .box {
+        position: absolute;
+        width: 120px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        border-radius: 6px;
+    }
+
+    .box-a { background: rgba(255, 100, 100, 0.85); top: 20px; left: 20px; z-index: 1; }
+    .box-b { background: rgba(100, 180, 255, 0.85); top: 45px; left: 80px; z-index: 3; /**on top**/}
+    .box-c { background: rgba(100, 220, 130, 0.85); top: 30px; left: 140px; z-index: 2; }
+</style>

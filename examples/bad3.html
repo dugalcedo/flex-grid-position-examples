@@ -1,0 +1,47 @@
+<h3>ABSOLUTE FOR LAYOUT</h3>
+<p>Using absolute positioning for every element requires hardcoded pixel values that break when content changes.</p>
+
+<div class="container bad">
+    <div class="item a">dog</div>
+    <div class="item b">cogwheel</div>
+    <div class="item c">car (now the label is longer)</div>
+</div>
+
+<div class="container good">
+    <div class="item">dog</div>
+    <div class="item">cogwheel</div>
+    <div class="item">car (now the label is longer)</div>
+</div>
+
+<style>
+    body { font-family: sans-serif; padding: 20px; }
+
+    .container {
+        border: 5px dashed gray;
+        margin-bottom: 30px;
+    }
+
+    .bad {
+        position: relative;
+        height: 60px; /**height must be hardcoded to fit the children**/
+    }
+
+    .item {
+        border: 3px dashed lightgray;
+        padding: 8px 12px;
+    }
+
+    .bad .item {
+        position: absolute; /**manually placed — breaks when text changes**/
+    }
+
+    .a { top: 10px; left: 10px; }
+    .b { top: 10px; left: 90px; } /**overlaps when "cogwheel" label is longer**/
+    .c { top: 10px; left: 210px; }
+
+    .good {
+        display: flex; /**items place themselves automatically**/
+        gap: 8px;
+        padding: 10px;
+    }
+</style>

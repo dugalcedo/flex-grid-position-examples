@@ -1,0 +1,41 @@
+<h3>FLEX WRAP</h3>
+
+<div data-label-flexbox class="flex-example example-4">
+
+    <div data-label-flex-item>A</div>
+    <div data-label-flex-item>B</div>
+    <div data-label-flex-item>C</div>
+    <div data-label-flex-item>D</div>
+    <div data-label-flex-item>E</div>
+    <div data-label-flex-item>F</div>
+    <div data-label-flex-item>G</div>
+    <div data-label-flex-item>H</div>
+
+</div>
+
+<style>
+    .flex-example {
+        border: 5px dashed gray;
+
+        & > * {
+            border: 3px dashed lightgray;
+        }
+    }
+
+    .example-4 {
+        display: flex;
+        flex-wrap: wrap; /**items wrap to a new row when there's no room**/
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .example-4 > * {
+        width: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5em;
+        font-family: sans-serif;
+    }
+</style>

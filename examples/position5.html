@@ -1,0 +1,41 @@
+<h3>POSITION: STICKY</h3>
+<p>Scroll down — the header sticks once it reaches the top of the viewport.</p>
+
+<div class="scroller">
+
+    <div data-label-element class="sticky-header">Sticky Header</div>
+
+    <div class="body-content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>Scroll down inside this box to see the header stick.</p>
+        <p>Unlike fixed, sticky only activates once the threshold is hit.</p>
+        <p>It also stays within its parent container.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+
+</div>
+
+<style>
+    body { font-family: sans-serif; padding: 20px; }
+    p { margin-bottom: 16px; }
+
+    .scroller {
+        height: 300px;
+        overflow-y: auto; /**creates the scrollable area**/
+        border: 5px dashed gray;
+    }
+
+    .sticky-header {
+        position: sticky; /**acts normal until it hits the threshold**/
+        top: 0; /**sticks when it reaches the top**/
+        background: steelblue;
+        color: white;
+        padding: 10px 16px;
+        font-weight: bold;
+    }
+
+    .body-content { padding: 16px; color: #444; }
+</style>

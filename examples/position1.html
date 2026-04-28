@@ -1,0 +1,39 @@
+<h3>POSITION: RELATIVE</h3>
+<p>The shifted box moves visually, but its original space is preserved.</p>
+
+<div class="row">
+
+    <div class="box">normal</div>
+
+    <div data-label-element class="box shifted">shifted</div>
+
+    <div class="box">normal</div>
+
+</div>
+
+<style>
+    body { font-family: sans-serif; padding: 20px; }
+    p { margin-bottom: 20px; font-size: 0.9em; color: #555; }
+
+    .row {
+        border: 5px dashed gray;
+        padding: 30px 10px;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .box {
+        border: 3px dashed lightgray;
+        padding: 15px;
+        margin: 5px;
+        width: 80px;
+        text-align: center;
+    }
+
+    .shifted {
+        position: relative; /**shifts from its normal spot**/
+        top: 30px; /**30px down**/
+        left: 20px; /**20px right**/
+        background: lightyellow;
+    }
+</style>

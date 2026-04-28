@@ -1,0 +1,39 @@
+<h3>TEMPLATE AREAS</h3>
+
+<div data-label-grid-container class="grid-example grid5">
+
+    <div data-label-grid-item class="header">header</div>
+    <div data-label-grid-item class="sidebar">sidebar</div>
+    <div data-label-grid-item class="main">main</div>
+    <div data-label-grid-item class="footer">footer</div>
+
+</div>
+
+<style>
+    .grid-example {
+        border: 5px dashed gray;
+        padding: 10px;
+        gap: 8px;
+        font-family: sans-serif;
+
+        & > * {
+            border: 3px dashed lightgray;
+            padding: 20px;
+            text-align: center;
+        }
+    }
+
+    .grid5 {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        grid-template-areas:
+            "header  header" /**each string is a row, each word is a cell**/
+            "sidebar main"
+            "footer  footer";
+    }
+
+    .header  { grid-area: header; }
+    .sidebar { grid-area: sidebar; }
+    .main    { grid-area: main; }
+    .footer  { grid-area: footer; }
+</style>

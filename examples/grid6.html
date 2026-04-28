@@ -1,0 +1,35 @@
+<h3>AUTO-FILL (RESPONSIVE)</h3>
+
+<div data-label-grid-container class="grid-example grid6">
+
+    <div data-label-grid-item>A</div>
+    <div data-label-grid-item>B</div>
+    <div data-label-grid-item>C</div>
+    <div data-label-grid-item>D</div>
+    <div data-label-grid-item>E</div>
+    <div data-label-grid-item>F</div>
+    <div data-label-grid-item>G</div>
+    <div data-label-grid-item>H</div>
+
+</div>
+
+<style>
+    .grid-example {
+        border: 5px dashed gray;
+        padding: 10px;
+        gap: 8px;
+        font-family: sans-serif;
+
+        & > * {
+            border: 3px dashed lightgray;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+    }
+
+    .grid6 {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /**as many columns as fit, each at least 100px wide**/
+    }
+</style>

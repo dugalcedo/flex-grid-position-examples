@@ -1,0 +1,51 @@
+<h3>FLEX WITHIN FLEX</h3>
+
+<div data-label-flexbox class="flex example-3">
+
+    <div data-label-flex-item-AND-flexbox class="item">
+        <img data-label-flex-item src="../icons/dog1.svg" alt="dog icon">
+        <p data-label-flex-item>Dog</p>
+    </div>
+
+    <div data-label-flex-item-AND-flexbox class="item">
+        <img data-label-flex-item src="../icons/car1.svg" alt="car icon">
+        <p data-label-flex-item>Car</p>
+    </div>
+
+    <div data-label-flex-item-AND-flexbox class="item">
+        <img data-label-flex-item src="../icons/partypopper1.svg" alt="party icon">
+        <p data-label-flex-item>Party</p>
+    </div>
+
+    <div data-label-flex-item-AND-flexbox class="item">
+        <img data-label-flex-item src="../icons/cogwheel1.svg" alt="cogwheel icon">
+        <p data-label-flex-item>Cogwheel</p>
+    </div>
+
+</div>
+
+<style>
+    .flex {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 30px;
+        background-color: gray;
+        padding: 15px;
+        border-radius: 15px;
+
+        & img {
+            width: 35px;
+        }
+    }
+
+    .item {
+        display: flex; /**Look! the flex items are ALSO flexboxes. flex within flex**/
+        align-items: center;
+        gap: 15px;
+
+        background-color: rgb(184, 184, 184);
+        border-radius: 15px;
+        padding: 0px 5px;
+    }
+</style>

@@ -1,0 +1,41 @@
+<h3>MARGIN INSTEAD OF GAP</h3>
+<p>Using margin for spacing in flex creates an unwanted gap after the last item.</p>
+
+<h4>With margin-right on every item:</h4>
+<div class="row bad">
+    <div class="item">one</div>
+    <div class="item">two</div>
+    <div class="item">three</div>
+</div>
+
+<h4>With gap (correct):</h4>
+<div class="row good">
+    <div class="item">one</div>
+    <div class="item">two</div>
+    <div class="item">three</div>
+</div>
+
+<style>
+    body { font-family: sans-serif; padding: 20px; }
+    h4 { margin: 16px 0 8px; font-size: 0.9em; }
+
+    .row {
+        display: flex;
+        border: 5px dashed gray;
+        padding: 10px;
+        margin-bottom: 16px;
+    }
+
+    .item {
+        border: 3px dashed lightgray;
+        padding: 10px 16px;
+    }
+
+    .bad .item {
+        margin-right: 12px; /**adds space after the last item too — asymmetric padding**/
+    }
+
+    .good {
+        gap: 12px; /**only applies between items, not after the last one**/
+    }
+</style>

@@ -1,0 +1,39 @@
+<h3>COLUMN SPANNING</h3>
+
+<div data-label-grid-container class="grid-example grid3">
+
+    <div data-label-grid-item class="wide">wide</div>
+    <div data-label-grid-item>3</div>
+    <div data-label-grid-item>4</div>
+    <div data-label-grid-item>5</div>
+    <div data-label-grid-item class="full">full width</div>
+
+</div>
+
+<style>
+    .grid-example {
+        border: 5px dashed gray;
+        padding: 10px;
+        gap: 8px;
+        font-family: sans-serif;
+
+        & > * {
+            border: 3px dashed lightgray;
+            padding: 20px;
+            text-align: center;
+        }
+    }
+
+    .grid3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /**repeat(3, 1fr) is shorthand for 1fr 1fr 1fr**/
+    }
+
+    .wide {
+        grid-column: span 2; /**takes up 2 columns**/
+    }
+
+    .full {
+        grid-column: span 3; /**takes up all 3 columns**/
+    }
+</style>

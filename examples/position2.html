@@ -1,0 +1,38 @@
+<h3>ABSOLUTE INSIDE RELATIVE</h3>
+<p>The absolute child positions itself relative to its nearest positioned ancestor.</p>
+
+<div data-label-container class="card">
+
+    <img src="../icons/dog1.svg" alt="dog icon">
+    <p class="name">dog</p>
+    <div data-label-element class="badge">NEW</div>
+
+</div>
+
+<style>
+    body { font-family: sans-serif; padding: 20px; }
+    p { margin-bottom: 20px; font-size: 0.9em; color: #555; }
+
+    .card {
+        position: relative; /**makes this the anchor for absolute children**/
+        display: inline-block;
+        border: 5px dashed gray;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .card img { width: 80px; display: block; }
+    .card .name { margin: 0; margin-top: 8px; }
+
+    .badge {
+        position: absolute; /**removed from flow, anchored to .card**/
+        top: 8px;
+        right: 8px;
+        background: crimson;
+        color: white;
+        font-size: 0.7em;
+        font-weight: bold;
+        padding: 2px 7px;
+        border-radius: 999px;
+    }
+</style>
