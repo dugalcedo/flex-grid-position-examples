@@ -1,41 +1,86 @@
 <h3>POSITION: STICKY</h3>
-<p>Scroll down — the header sticks once it reaches the top of the viewport.</p>
+<p>Scroll down — when the table comes into view, its header row sticks to the top.</p>
 
 <div class="scroller">
 
-    <div data-label-element class="sticky-header">Sticky Header</div>
-
-    <div class="body-content">
+    <div class="intro">
+        <p>Some content above the table. Keep scrolling...</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <p>Scroll down inside this box to see the header stick.</p>
-        <p>Unlike fixed, sticky only activates once the threshold is hit.</p>
-        <p>It also stays within its parent container.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </div>
 
+    <table data-label-element>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Department</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Alice</td><td>Engineer</td><td>Platform</td></tr>
+            <tr><td>Bob</td><td>Designer</td><td>Product</td></tr>
+            <tr><td>Carol</td><td>Manager</td><td>Operations</td></tr>
+            <tr><td>David</td><td>Engineer</td><td>Backend</td></tr>
+            <tr><td>Eva</td><td>Analyst</td><td>Data</td></tr>
+            <tr><td>Frank</td><td>Engineer</td><td>Frontend</td></tr>
+            <tr><td>Grace</td><td>Designer</td><td>Brand</td></tr>
+            <tr><td>Henry</td><td>Manager</td><td>Sales</td></tr>
+            <tr><td>Iris</td><td>Analyst</td><td>Finance</td></tr>
+            <tr><td>Jack</td><td>Engineer</td><td>Platform</td></tr>
+            <tr><td>Karen</td><td>Designer</td><td>Product</td></tr>
+            <tr><td>Leo</td><td>Manager</td><td>HR</td></tr>
+            <tr><td>Iris</td><td>Analyst</td><td>Finance</td></tr>
+            <tr><td>Jack</td><td>Engineer</td><td>Platform</td></tr>
+            <tr><td>Karen</td><td>Designer</td><td>Product</td></tr>
+            <tr><td>Leo</td><td>Manager</td><td>HR</td></tr>
+            <tr><td>Iris</td><td>Analyst</td><td>Finance</td></tr>
+            <tr><td>Jack</td><td>Engineer</td><td>Platform</td></tr>
+            <tr><td>Karen</td><td>Designer</td><td>Product</td></tr>
+            <tr><td>Leo</td><td>Manager</td><td>HR</td></tr>
+        </tbody>
+    </table>
+
 </div>
 
 <style>
     body { font-family: sans-serif; padding: 20px; }
-    p { margin-bottom: 16px; }
+    p { margin-bottom: 12px; }
 
     .scroller {
         height: 300px;
-        overflow-y: auto; /**creates the scrollable area**/
+        overflow-y: auto;
         border: 5px dashed gray;
+        padding: 16px;
     }
 
-    .sticky-header {
-        position: sticky; /**acts normal until it hits the threshold**/
-        top: 0; /**sticks when it reaches the top**/
+    .intro { color: #888; margin-bottom: 16px; }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    thead tr {
+        position: sticky; /**sticks when the header reaches the top of the scroller**/
+        top: 0;
+    }
+
+    th {
         background: steelblue;
         color: white;
         padding: 10px 16px;
-        font-weight: bold;
+        text-align: left;
     }
 
-    .body-content { padding: 16px; color: #444; }
+    td {
+        padding: 8px 16px;
+        border-bottom: 1px solid #ddd;
+        color: #444;
+    }
+
+    tr:nth-child(even) td { background: #f5f5f5; }
 </style>

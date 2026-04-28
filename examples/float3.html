@@ -1,18 +1,18 @@
 <h3>CLEARING FLOATS</h3>
-<p>Without clearing, content after the float overlaps it. <code>clear: both</code> fixes it.</p>
+<p>Without <code>clear</code>, the next block starts beside the float. <code>clear: both</code> forces it below.</p>
 
 <h4>Without clear:</h4>
-<div class="article broken">
+<div class="article">
     <img src="../icons/cogwheel1.svg" alt="cogwheel" class="floated">
     <p>Short text.</p>
-    <div class="next-section bad">This overlaps the float!</div>
+    <div class="bad">I squeeze in beside the float!</div>
 </div>
 
 <h4>With clear:</h4>
 <div class="article">
     <img src="../icons/cogwheel1.svg" alt="cogwheel" class="floated">
     <p>Short text.</p>
-    <div data-label-element class="next-section">This starts below the float.</div>
+    <div data-label-element class="next-section">I wait for the float to end.</div>
 </div>
 
 <style>
@@ -23,14 +23,14 @@
     .article {
         border: 5px dashed gray;
         padding: 16px;
-        margin-bottom: 16px;
+        margin-bottom: 40px;
         overflow: hidden;
     }
 
     .floated {
         float: left;
-        width: 60px;
-        margin: 0 12px 8px 0;
+        width: 120px;
+        margin: 0 12px 0 0;
     }
 
     .next-section {

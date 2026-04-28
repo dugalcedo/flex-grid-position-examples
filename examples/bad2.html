@@ -1,52 +1,69 @@
 <h3>FLOAT-BASED LAYOUT</h3>
-<p>Floats were never designed for layout — they require hacks and break easily.</p>
+<p>Float was designed for text wrapping — not sidebar layouts. The container collapses, content leaks, and every fix is another hack.</p>
 
-<div class="layout">
-    <div class="sidebar">sidebar</div>
-    <div class="main">main content</div>
+<h4>Float layout (bad) — container collapses, footer leaks up:</h4>
+<div class="f-container">
+    <div class="f-sidebar">Sidebar</div>
+    <div class="f-main">Main — also needs <code>float: left</code> or it wraps under the sidebar</div>
 </div>
+<div class="f-footer">I'm the footer. The container above has zero height so I leaked into it.</div>
 
-<p class="after">I'm the next element — also needs clearing!</p>
-
-<div class="layout-good">
-    <div class="sidebar">sidebar</div>
-    <div class="main">main content — use grid instead!</div>
+<h4>Grid layout (good):</h4>
+<div class="g-container">
+    <div class="g-sidebar">Sidebar</div>
+    <div class="g-main">Main — no floats, no manual widths, no clearing hacks</div>
 </div>
+<div class="g-footer">I'm the footer. I appear exactly where expected.</div>
 
 <style>
     body { font-family: sans-serif; padding: 20px; }
-    p { margin: 12px 0; }
+    h4 { margin: 20px 0 8px; clear: both; }
+    code { font-size: 0.85em; }
 
-    .layout {
+    .f-container {
         border: 5px dashed red;
-        overflow: hidden; /**hack to prevent collapse — but clips content**/
+        /**no overflow:hidden — container collapses to zero height**/
     }
 
-    .sidebar {
-        float: left; /**floats as a layout hack**/
-        width: 160px;
-        padding: 20px;
-        background: #eee;
+    .f-sidebar {
+        float: left; /**hack: float the sidebar**/
+        width: 140px;
+        background: #ddd;
+        padding: 16px;
+        min-height: 80px;
     }
 
-    .main {
-        float: left; /**everything must float, creating fragile layouts**/
-        width: calc(100% - 160px); /**manual calculation needed**/
-        padding: 20px;
+    .f-main {
+        float: left; /**hack: must float main too or it wraps under**/
+        width: calc(100% - 140px); /**hack: manual width tied to sidebar width**/
+        padding: 16px;
+        min-height: 80px;
     }
 
-    .after {
+    .f-footer {
         background: salmon;
-        padding: 8px;
-        clear: both; /**forgot this? floats bleed into next content**/
+        padding: 12px;
+        /**missing clear:both — footer overlaps the floated content**/
     }
 
-    .layout-good {
+    .g-container {
+        display: grid; /**one line replaces all the hacks above**/
+        grid-template-columns: 140px 1fr;
         border: 5px dashed green;
-        display: grid; /**clean, no hacks needed**/
-        grid-template-columns: 160px 1fr;
+        margin-top: 4px;
     }
 
-    .layout-good .sidebar { float: none; }
-    .layout-good .main { float: none; width: auto; padding: 20px; }
+    .g-sidebar {
+        background: #ddd;
+        padding: 16px;
+        min-height: 80px;
+    }
+
+    .g-main { padding: 16px; }
+
+    .g-footer {
+        background: lightgreen;
+        padding: 12px;
+        margin-top: 8px;
+    }
 </style>

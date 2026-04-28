@@ -4,10 +4,10 @@
 
     <div data-label-flex-item class="logo">MyApp</div>
 
-    <div data-label-flex-item class="nav-links">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+    <div data-label-flex-item-AND-flex-box class="nav-links">
+        <a data-label-flex-item href="#">Home</a>
+        <a data-label-flex-item href="#">About</a>
+        <a data-label-flex-item href="#">Contact</a>
     </div>
 
 </div>
@@ -36,7 +36,7 @@
     }
 
     .nav-links {
-        display: flex;
+        display: flex; /**Another flex-within-a-flex**/
         gap: 20px;
         padding: 4px 8px;
 

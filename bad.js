@@ -2,7 +2,7 @@ import generatePreCode from "./js/generatePreCode.js"
 
 const examplesSection = document.querySelector('.examples')
 
-const EXAMPLES = ['bad1', 'bad2', 'bad3', 'bad4', 'bad5', 'bad6']
+const EXAMPLES = ['bad1', 'bad2', 'bad3']
 
 main()
 async function main() {

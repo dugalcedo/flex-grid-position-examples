@@ -1,47 +1,53 @@
 <h3>ABSOLUTE FOR LAYOUT</h3>
-<p>Using absolute positioning for every element requires hardcoded pixel values that break when content changes.</p>
+<p>Absolute removes elements from flow — you hand-place everything in pixels. Change any label and the whole layout breaks. Flex handles this in two lines.</p>
 
-<div class="container bad">
-    <div class="item a">dog</div>
-    <div class="item b">cogwheel</div>
-    <div class="item c">car (now the label is longer)</div>
+<h4>Absolute (bad) — items overlap because positions are hardcoded:</h4>
+<div class="abs-container">
+    <div class="abs-item a">dog</div>
+    <div class="abs-item b">cogwheel</div>
+    <div class="abs-item c">car</div>
 </div>
 
-<div class="container good">
-    <div class="item">dog</div>
-    <div class="item">cogwheel</div>
-    <div class="item">car (now the label is longer)</div>
+<h4>Flex (good) — items place themselves, content can change freely:</h4>
+<div class="flex-container">
+    <div class="flex-item">dog</div>
+    <div class="flex-item">cogwheel</div>
+    <div class="flex-item">car</div>
 </div>
 
 <style>
     body { font-family: sans-serif; padding: 20px; }
+    h4 { margin: 20px 0 8px; }
 
-    .container {
-        border: 5px dashed gray;
+    .abs-container {
+        position: relative;
+        height: 55px;
+        border: 5px dashed red;
         margin-bottom: 30px;
     }
 
-    .bad {
-        position: relative;
-        height: 60px; /**height must be hardcoded to fit the children**/
-    }
-
-    .item {
-        border: 3px dashed lightgray;
+    .abs-item {
+        position: absolute; /**each item manually placed — no awareness of siblings**/
+        top: 8px;
         padding: 8px 12px;
+        border: 3px solid #999;
+        font-weight: bold;
     }
 
-    .bad .item {
-        position: absolute; /**manually placed — breaks when text changes**/
-    }
+    .a { left: 10px; background: #fdd; }
+    .b { left: 50px; background: #dfd; } /**overlaps .a — positions ignore content width**/
+    .c { left: 90px; background: #ddf; } /**overlaps .b**/
 
-    .a { top: 10px; left: 10px; }
-    .b { top: 10px; left: 90px; } /**overlaps when "cogwheel" label is longer**/
-    .c { top: 10px; left: 210px; }
-
-    .good {
-        display: flex; /**items place themselves automatically**/
-        gap: 8px;
+    .flex-container {
+        display: flex; /**items place themselves side by side automatically**/
+        gap: 10px;
         padding: 10px;
+        border: 5px dashed green;
+    }
+
+    .flex-item {
+        padding: 8px 12px;
+        border: 3px solid #999;
+        font-weight: bold;
     }
 </style>
