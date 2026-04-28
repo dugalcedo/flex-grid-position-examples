@@ -13,7 +13,7 @@ async function main() {
 }
 
 async function loadExample(name) {
-    const res = await fetch(`/examples/${name}.html`)
+    const res = await fetch(`./examples/${name}.html`)
     const html = await res.text()
     return `
         <div class="example">
@@ -21,7 +21,7 @@ async function loadExample(name) {
                 <code><pre>${generatePreCode(html)}</pre></code>
             </div>
             <div class="iframe">
-                <iframe src="/examples/${name}.html" />
+                <iframe src="./examples/${name}.html" />
             </div>
         </div>
     `
